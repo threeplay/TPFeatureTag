@@ -1,0 +1,23 @@
+PODS:
+  - Nimble (7.3.1)
+  - TPFeatureTag (0.1.0)
+
+DEPENDENCIES:
+  - Nimble (~> 7.3.1)
+  - TPFeatureTag (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Nimble
+
+EXTERNAL SOURCES:
+  TPFeatureTag:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Nimble: 04f732da099ea4d153122aec8c2a88fd0c7219ae
+  TPFeatureTag: c825073f07a5682dd70170e6c58d314ae7d3d1a2
+
+PODFILE CHECKSUM: 32cb0cc01fce0ab071c1d45c830ef81fe911312d
+
+COCOAPODS: 1.6.0.beta.2

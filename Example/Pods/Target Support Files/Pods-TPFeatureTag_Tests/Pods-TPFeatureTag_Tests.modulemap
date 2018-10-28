@@ -1,0 +1,6 @@
+framework module Pods_TPFeatureTag_Tests {
+  umbrella header "Pods-TPFeatureTag_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+framework module TPFeatureTag {
+  umbrella header "TPFeatureTag-umbrella.h"
+
+  export *
+  module * { export * }
+}

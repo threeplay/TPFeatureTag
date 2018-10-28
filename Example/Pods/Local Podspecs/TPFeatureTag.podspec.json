@@ -1,0 +1,22 @@
+{
+  "name": "TPFeatureTag",
+  "version": "0.1.0",
+  "summary": "A short description of TPFeatureTag.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/Eliran Ben-Ezra/TPFeatureTag",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Eliran Ben-Ezra": "eliran@gc.io"
+  },
+  "source": {
+    "git": "https://github.com/Eliran Ben-Ezra/TPFeatureTag.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source_files": "TPFeatureTag/Classes/**/*"
+}

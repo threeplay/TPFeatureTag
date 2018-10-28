@@ -7,6 +7,24 @@
 //
 
 import UIKit
+import TPFeatureTag
+
+class MyFeatureHolder : FeatureTagsHolder {
+  let logFeature = makeFeature()
+  let otherFeature = makeFeature(enabled: true)
+}
+
+class InternalFeatureHolder: FeatureTagsHolder {
+  let devTest = makeFeature()
+}
+
+struct CustomHolder {
+  let feature = makeFeature()
+}
+
+let Custom = CustomHolder()
+let MyFeature = MyFeatureHolder()
+let otherFeatures = InternalFeatureHolder()
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,7 +34,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        return true
+
+      print("Feature: \(MyFeature.logFeature)")
+
+      FeatureTagManager.instance.register(Custom)
+
+      print("All features: \(FeatureTagManager.instance.allFeatures)")
+      return true
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
