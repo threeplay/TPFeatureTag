@@ -1,6 +1,6 @@
 # TPFeatureTag
 
-[![CI Status](https://img.shields.io/travis/Eliran Ben-Ezra/TPFeatureTag.svg?style=flat)](https://travis-ci.org/Eliran Ben-Ezra/TPFeatureTag)
+[![CI Status](https://img.shields.io/travis/threeplay/TPFeatureTag.svg?style=flat)](https://travis-ci.org/threeplay/TPFeatureTag)
 [![Version](https://img.shields.io/cocoapods/v/TPFeatureTag.svg?style=flat)](https://cocoapods.org/pods/TPFeatureTag)
 [![License](https://img.shields.io/cocoapods/l/TPFeatureTag.svg?style=flat)](https://cocoapods.org/pods/TPFeatureTag)
 [![Platform](https://img.shields.io/cocoapods/p/TPFeatureTag.svg?style=flat)](https://cocoapods.org/pods/TPFeatureTag)
@@ -22,7 +22,7 @@ pod 'TPFeatureTag'
 
 ## Author
 
-Eliran Ben-Ezra, eliran@gc.io
+Eliran Ben-Ezra, eliran@threeplay.com
 
 ## License
 
