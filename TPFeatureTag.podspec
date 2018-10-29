@@ -9,34 +9,17 @@
 Pod::Spec.new do |s|
   s.name             = 'TPFeatureTag'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of TPFeatureTag.'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-
+  s.summary          = 'Simple boolean feature tags manager.'
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+Simple boolean feature tags manager with name spaced feature tags and custom value resolvers
                        DESC
 
-  s.homepage         = 'https://github.com/Eliran Ben-Ezra/TPFeatureTag'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.homepage         = 'https://github.com/threeplay/TPFeatureTag'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'Eliran Ben-Ezra' => 'eliran@gc.io' }
-  s.source           = { :git => 'https://github.com/Eliran Ben-Ezra/TPFeatureTag.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-
+  s.author           = { 'Eliran Ben-Ezra' => 'eliran@threeplay.com' }
+  s.source           = { :git => 'https://github.com/threeplay/TPFeatureTag.git', :tag => s.version.to_s }
+  s.swift_version    = '4.2'
   s.ios.deployment_target = '10.0'
 
   s.source_files = 'TPFeatureTag/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'TPFeatureTag' => ['TPFeatureTag/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end
