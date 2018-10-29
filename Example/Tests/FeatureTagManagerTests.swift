@@ -14,9 +14,18 @@ class FeatureTagManagerTests: XCTestCase {
     let f1 = makeFeature()
   }
 
+  class Resolver: FeatureTagResolver {
+    var value = [FeatureTagManager.Feature: Bool]()
+
+    func isOn(feature: FeatureTagManager.Feature) -> Bool? {
+      return value[feature]
+    }
+  }
+
   let testFeatures = TestFeatures()
   let otherTestFeatures = OtherTestFeatures()
   var manager: FeatureTagManager!
+  var mockResolver = Resolver()
 
   override func setUp() {
     super.setUp()
@@ -48,5 +57,31 @@ class FeatureTagManagerTests: XCTestCase {
     manager.register(testFeatures)
     let ourFeatures = manager.allFeatures.filter { $0.nameSpace == "TestFeatures" }
     expect(ourFeatures).to(contain([testFeatures.f1, testFeatures.f2, testFeatures.f3]))
+  }
+
+  func test_that_resolvers_can_be_installed() {
+    manager.install(name: "local", priority: 1, resolver: mockResolver)
+    manager.register(testFeatures)
+    mockResolver.value[testFeatures.f1] = true
+    expect(self.testFeatures.f1.isOn).to(beTrue())
+    mockResolver.value = [:]
+    expect(self.testFeatures.f1.isOn).to(beFalse())
+  }
+
+  func test_that_resolvers_are_evaluated_in_asending_priority_order() {
+    let priority1 = Resolver()
+    let priority2 = Resolver()
+    let priority3 = Resolver()
+    manager.install(name: "p1", priority: 1, resolver: priority1)
+    manager.install(name: "p3", priority: 3, resolver: priority3)
+    manager.install(name: "p2", priority: 2, resolver: priority2)
+
+    priority3.value[testFeatures.f1] = true
+    expect(self.manager.resolve(self.testFeatures.f1).source).to(equal("p3"))
+    priority2.value[testFeatures.f1] = false
+    priority1.value[testFeatures.f1] = false
+    expect(self.manager.resolve(self.testFeatures.f1).source).to(equal("p1"))
+    priority1.value = [:]
+    expect(self.manager.resolve(self.testFeatures.f1).source).to(equal("p2"))
   }
 }

@@ -8,17 +8,27 @@ public func makeFeature(key: String? = nil, enabled: Bool = false) -> FeatureTag
   return FeatureTagManager.Feature(key: key, enabled: enabled)
 }
 
+public protocol FeatureTagResolver {
+  func isOn(feature: FeatureTagManager.Feature) -> Bool?
+}
+
+public protocol FeatureTagOverride {
+  func set(feature: FeatureTagManager.Feature, isOn: Bool)
+  func clear(feature: FeatureTagManager.Feature)
+}
+
 public class FeatureTagManager {
-  public static let instance = FeatureTagManager()
-
   private var registeredFeatures = [String: Feature]()
+  private var installedResolvers = [Resolver]()
 
-  private init() {
-  }
-
-  public class Feature: CustomStringConvertible, Equatable {
+  public class Feature: CustomStringConvertible, Equatable, Hashable {
     public static func == (lhs: FeatureTagManager.Feature, rhs: FeatureTagManager.Feature) -> Bool {
       return lhs.name == rhs.name && lhs.nameSpace == rhs.nameSpace && lhs.key == rhs.key
+    }
+
+    public func hash(into hasher: inout Hasher) {
+      hasher.combine(name)
+      hasher.combine(nameSpace)
     }
 
     internal let defaultEnabled: Bool
@@ -40,11 +50,18 @@ public class FeatureTagManager {
     }
   }
 
+  public static let instance = FeatureTagManager()
+
   public var allFeatures: [Feature] {
     return registeredFeatures.values.map { $0 }
   }
 
   public func resolve(_ feature: Feature) -> (source: String, isOn: Bool) {
+    for resolver in installedResolvers {
+      if let isOn = resolver.instance.isOn(feature: feature) {
+        return (source: resolver.name, isOn: isOn)
+      }
+    }
     return (source: "default", isOn: feature.defaultEnabled)
   }
 
@@ -60,4 +77,31 @@ public class FeatureTagManager {
       registeredFeatures[nameSpacedFeatureName] = feature
     }
   }
+
+  public func install(name: String, priority: UInt, resolver: FeatureTagResolver) {
+    let r = Resolver(name: name, priority: priority, instance: resolver)
+    guard !installedResolvers.contains(r) else {
+      fatalError("A resolver with same priority already exists (installing: \(r) existing: \(String(describing: installedResolvers.first { r == $0 }))))")
+    }
+    installedResolvers = (installedResolvers + [r]).sorted()
+  }
+
+  private struct Resolver: Comparable {
+    static func == (lhs: FeatureTagManager.Resolver, rhs: FeatureTagManager.Resolver) -> Bool {
+      return lhs.priority == rhs.priority
+    }
+
+    static func < (lhs: FeatureTagManager.Resolver, rhs: FeatureTagManager.Resolver) -> Bool {
+      return lhs.priority < rhs.priority
+    }
+
+    let name: String
+    let priority: UInt
+    let instance: FeatureTagResolver
+  }
+
+  private init() {
+  }
+
+
 }
