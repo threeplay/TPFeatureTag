@@ -2,7 +2,6 @@ import XCTest
 import Nimble
 @testable import TPFeatureTag
 
-
 class TestFeatureTag: FeatureTags {
   let feature1 = makeFeature()
   let feature2 = makeFeature()
