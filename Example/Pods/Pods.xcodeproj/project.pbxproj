@@ -799,6 +799,38 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		0496D4B92CEA38F996F64EB4B06B6F52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C67907B297F4CE561D0DB1801367EE38 /* TPFeatureTag.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/TPFeatureTag/TPFeatureTag-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TPFeatureTag/TPFeatureTag-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/TPFeatureTag/TPFeatureTag.modulemap";
+				PRODUCT_MODULE_NAME = TPFeatureTag;
+				PRODUCT_NAME = TPFeatureTag;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		11D027BD8219E71225D197BACF78F7C1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -964,38 +996,6 @@
 			};
 			name = Release;
 		};
-		6DDE2A8EFFA9B24E012182494A865775 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C67907B297F4CE561D0DB1801367EE38 /* TPFeatureTag.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/TPFeatureTag/TPFeatureTag-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/TPFeatureTag/TPFeatureTag-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/TPFeatureTag/TPFeatureTag.modulemap";
-				PRODUCT_MODULE_NAME = TPFeatureTag;
-				PRODUCT_NAME = TPFeatureTag;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		7153378F6A2E12EB91CDC7123AD87433 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 67BF3BBEB5BF86718E10D7C05E4DD3F2 /* Pods-TPFeatureTag_Tests.debug.xcconfig */;
@@ -1029,39 +1029,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
-		};
-		721658B561AAF8C43F3B555E41A5731A /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C67907B297F4CE561D0DB1801367EE38 /* TPFeatureTag.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/TPFeatureTag/TPFeatureTag-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/TPFeatureTag/TPFeatureTag-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/TPFeatureTag/TPFeatureTag.modulemap";
-				PRODUCT_MODULE_NAME = TPFeatureTag;
-				PRODUCT_NAME = TPFeatureTag;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
 		};
 		8117ECE51194D1148BEC9433A9E37D3C /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1188,6 +1155,39 @@
 			};
 			name = Release;
 		};
+		EC3699CE4065149FAEF002C2D0A8F906 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C67907B297F4CE561D0DB1801367EE38 /* TPFeatureTag.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/TPFeatureTag/TPFeatureTag-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TPFeatureTag/TPFeatureTag-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/TPFeatureTag/TPFeatureTag.modulemap";
+				PRODUCT_MODULE_NAME = TPFeatureTag;
+				PRODUCT_NAME = TPFeatureTag;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1212,8 +1212,8 @@
 		8C0721EB33C5965DBF2E9F0790806C6B /* Build configuration list for PBXNativeTarget "TPFeatureTag" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6DDE2A8EFFA9B24E012182494A865775 /* Debug */,
-				721658B561AAF8C43F3B555E41A5731A /* Release */,
+				0496D4B92CEA38F996F64EB4B06B6F52 /* Debug */,
+				EC3699CE4065149FAEF002C2D0A8F906 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

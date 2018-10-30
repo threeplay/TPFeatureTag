@@ -9,7 +9,7 @@
 import UIKit
 import TPFeatureTag
 
-class MyFeatureHolder : FeatureTags {
+class MyFeatureHolder: FeatureTags {
   let logFeature = makeFeature()
   let otherFeature = makeFeature(enabled: true)
 }
