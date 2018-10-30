@@ -14,26 +14,27 @@ class FeatureTagManagerTests: XCTestCase {
     let f1 = makeFeature()
   }
 
-  class Resolver: FeatureTagResolver {
-    var value = [FeatureTagManager.Feature: Bool]()
+  class Getter: FeatureTagGetter {
+    var value = [FeatureTag: Bool]()
 
-    func isOn(feature: FeatureTagManager.Feature) -> Bool? {
+    func isOn(feature: FeatureTag) -> Bool? {
       return value[feature]
     }
   }
 
   let testFeatures = TestFeatures()
   let otherTestFeatures = OtherTestFeatures()
-  var manager: FeatureTagManager!
-  var mockResolver = Resolver()
+  var mockGetter = Getter()
+
+  var manager: FeatureTags.Manager!
 
   override func setUp() {
     super.setUp()
-    manager = FeatureTagManager.instance
+    manager = FeatureTags.Manager()
   }
 
   func test_that_instance_always_returns_the_same_instance() {
-    expect(self.manager) === FeatureTagManager.instance
+    expect(FeatureTags.Manager.instance) === FeatureTags.Manager.instance
   }
 
   func test_that_registered_features_have_the_correct_name_space() {
@@ -60,21 +61,21 @@ class FeatureTagManagerTests: XCTestCase {
   }
 
   func test_that_resolvers_can_be_installed() {
-    manager.install(name: "local", priority: 1, resolver: mockResolver)
+    manager.install(name: "local", priority: 1, getter: mockGetter)
     manager.register(testFeatures)
-    mockResolver.value[testFeatures.f1] = true
+    mockGetter.value[testFeatures.f1] = true
     expect(self.testFeatures.f1.isOn).to(beTrue())
-    mockResolver.value = [:]
+    mockGetter.value = [:]
     expect(self.testFeatures.f1.isOn).to(beFalse())
   }
 
   func test_that_resolvers_are_evaluated_in_asending_priority_order() {
-    let priority1 = Resolver()
-    let priority2 = Resolver()
-    let priority3 = Resolver()
-    manager.install(name: "p1", priority: 1, resolver: priority1)
-    manager.install(name: "p3", priority: 3, resolver: priority3)
-    manager.install(name: "p2", priority: 2, resolver: priority2)
+    let priority1 = Getter()
+    let priority2 = Getter()
+    let priority3 = Getter()
+    manager.install(name: "p1", priority: 1, getter: priority1)
+    manager.install(name: "p3", priority: 3, getter: priority3)
+    manager.install(name: "p2", priority: 2, getter: priority2)
 
     priority3.value[testFeatures.f1] = true
     expect(self.manager.resolve(self.testFeatures.f1).source).to(equal("p3"))

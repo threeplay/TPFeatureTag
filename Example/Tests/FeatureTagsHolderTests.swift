@@ -2,12 +2,22 @@ import XCTest
 import Nimble
 @testable import TPFeatureTag
 
-class TestFeatureTag: FeatureTagsHolder {
+
+class TestFeatureTag: FeatureTags {
   let feature1 = makeFeature()
   let feature2 = makeFeature()
 }
 
 class FeatureTagsHolderTests: XCTestCase {
-  func test_that_subclasses_instance_method_always_return_the_same_instance() {
+  private let testFeatureTagManager = FeatureTags.Manager()
+  private var tags: TestFeatureTag!
+
+  override func setUp() {
+    super.setUp()
+    tags = TestFeatureTag(manager: testFeatureTagManager)
+  }
+
+  func test_that_feature_tags_can_be_registered_to_specific_manager() {
+    expect(self.testFeatureTagManager.allFeatures).to(contain([tags.feature1, tags.feature2]))
   }
 }

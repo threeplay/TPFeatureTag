@@ -9,12 +9,12 @@
 import UIKit
 import TPFeatureTag
 
-class MyFeatureHolder: FeatureTagsHolder {
+class MyFeatureHolder: FeatureTags {
   let logFeature = makeFeature()
   let otherFeature = makeFeature(enabled: true)
 }
 
-class InternalFeatureHolder: FeatureTagsHolder {
+class InternalFeatureHolder: FeatureTags {
   let devTest = makeFeature()
 }
 
@@ -37,9 +37,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
       print("Feature: \(MyFeature.logFeature)")
 
-      FeatureTagManager.instance.register(Custom)
+      FeatureTags.Manager.instance.register(Custom)
 
-      print("All features: \(FeatureTagManager.instance.allFeatures)")
+      print("All features: \(FeatureTags.Manager.instance.allFeatures)")
       return true
     }
 
