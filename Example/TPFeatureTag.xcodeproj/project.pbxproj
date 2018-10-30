@@ -15,6 +15,7 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* FeatureTagManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* FeatureTagManagerTests.swift */; };
 		B73765812185F219002FCC7E /* FeatureTagsHolderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B737657F2185F213002FCC7E /* FeatureTagsHolderTests.swift */; };
+		B7C0DEFC218803B000ED31AA /* FeatureTagTestOverrideTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C0DEF82188023600ED31AA /* FeatureTagTestOverrideTests.swift */; };
 		FEF481524F4EE800629EF148 /* Pods_TPFeatureTag_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F2DE94C3A2217EC11103C92 /* Pods_TPFeatureTag_Example.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,7 @@
 		9C6E673065CA44EE3D83D9A4 /* Pods-TPFeatureTag_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TPFeatureTag_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TPFeatureTag_Tests/Pods-TPFeatureTag_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		B39D64C74F3AAA2D8ED2C0FA /* Pods-TPFeatureTag_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TPFeatureTag_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-TPFeatureTag_Example/Pods-TPFeatureTag_Example.release.xcconfig"; sourceTree = "<group>"; };
 		B737657F2185F213002FCC7E /* FeatureTagsHolderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureTagsHolderTests.swift; sourceTree = "<group>"; };
+		B7C0DEF82188023600ED31AA /* FeatureTagTestOverrideTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureTagTestOverrideTests.swift; sourceTree = "<group>"; };
 		F0D4CBFA2DC015C22E1835C8 /* TPFeatureTag.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = TPFeatureTag.podspec; path = ../TPFeatureTag.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
@@ -118,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				607FACEB1AFB9204008FA782 /* FeatureTagManagerTests.swift */,
+				B7C0DEF82188023600ED31AA /* FeatureTagTestOverrideTests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 				B737657F2185F213002FCC7E /* FeatureTagsHolderTests.swift */,
 			);
@@ -354,6 +357,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7C0DEFC218803B000ED31AA /* FeatureTagTestOverrideTests.swift in Sources */,
 				607FACEC1AFB9204008FA782 /* FeatureTagManagerTests.swift in Sources */,
 				B73765812185F219002FCC7E /* FeatureTagsHolderTests.swift in Sources */,
 			);
