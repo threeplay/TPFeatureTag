@@ -1,7 +1,4 @@
 //
-//  FeatureTag.swift
-//  TPFeatureTag
-//
 //  Created by Eliran Ben-Ezra on 10/28/18.
 //
 

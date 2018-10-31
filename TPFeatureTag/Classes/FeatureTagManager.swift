@@ -1,3 +1,7 @@
+//
+//  Created by Eliran Ben-Ezra on 10/29/18.
+//
+
 open class FeatureTags {
   public init(manager: FeatureTags.Manager = FeatureTags.Manager.instance) {
     manager.register(self)

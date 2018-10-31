@@ -1,9 +1,5 @@
 //
-//  AppDelegate.swift
-//  TPFeatureTag
-//
-//  Created by Eliran Ben-Ezra on 10/28/2018.
-//  Copyright (c) 2018 Eliran Ben-Ezra. All rights reserved.
+//  Created by Eliran Ben-Ezra on 10/28/18.
 //
 
 import UIKit
