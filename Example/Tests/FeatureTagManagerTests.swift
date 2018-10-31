@@ -45,10 +45,10 @@ class FeatureTagManagerTests: XCTestCase {
     let expectedNameSpace = "TestFeatures"
     manager.register(testFeatures)
     manager.register(otherTestFeatures)
-    expect(self.testFeatures.f1.nameSpace).to(equal(expectedNameSpace))
-    expect(self.testFeatures.f2.nameSpace).to(equal(expectedNameSpace))
-    expect(self.testFeatures.f3.nameSpace).to(equal(expectedNameSpace))
-    expect(self.otherTestFeatures.f1.nameSpace).to(equal("OtherTestFeatures"))
+    expect(self.testFeatures.f1.namespace).to(equal(expectedNameSpace))
+    expect(self.testFeatures.f2.namespace).to(equal(expectedNameSpace))
+    expect(self.testFeatures.f3.namespace).to(equal(expectedNameSpace))
+    expect(self.otherTestFeatures.f1.namespace).to(equal("OtherTestFeatures"))
   }
 
   func test_that_registered_features_have_the_correct_name() {
@@ -60,7 +60,7 @@ class FeatureTagManagerTests: XCTestCase {
 
   func test_that_it_can_register_features() {
     manager.register(testFeatures)
-    let ourFeatures = manager.allFeatures.filter { $0.nameSpace == "TestFeatures" }
+    let ourFeatures = manager.allFeatures.filter { $0.namespace == "TestFeatures" }
     expect(ourFeatures).to(contain([testFeatures.f1, testFeatures.f2, testFeatures.f3]))
   }
 
