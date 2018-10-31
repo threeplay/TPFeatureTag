@@ -69,6 +69,7 @@
 		B7C0DEF521868D0F00ED31AA /* FeatureTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C0DEF421868D0F00ED31AA /* FeatureTag.swift */; };
 		B7C0DEF721868DC800ED31AA /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C0DEF621868DC800ED31AA /* Common.swift */; };
 		B7C0DEFB2188033600ED31AA /* FeatureTagTestOverride.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C0DEFA2188033600ED31AA /* FeatureTagTestOverride.swift */; };
+		B7C0DEFE2189447400ED31AA /* Resolvers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C0DEFD2189447400ED31AA /* Resolvers.swift */; };
 		B7ED1B41F56087971B656A2E38322310 /* Stringers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B83B8FB940A6B1A8817EFC16945562E /* Stringers.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		B81EF4338A6F11F260A9F065783DF017 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
 		BEB8082717D949400F2DE3458E75CBE3 /* CwlMachBadInstructionHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 85BB5C3CD796262DD8E95D800B675E18 /* CwlMachBadInstructionHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -200,6 +201,7 @@
 		B7C0DEF421868D0F00ED31AA /* FeatureTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FeatureTag.swift; path = TPFeatureTag/Classes/FeatureTag.swift; sourceTree = "<group>"; };
 		B7C0DEF621868DC800ED31AA /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Common.swift; path = TPFeatureTag/Classes/Common.swift; sourceTree = "<group>"; };
 		B7C0DEFA2188033600ED31AA /* FeatureTagTestOverride.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FeatureTagTestOverride.swift; path = TPFeatureTag/Classes/FeatureTagTestOverride.swift; sourceTree = "<group>"; };
+		B7C0DEFD2189447400ED31AA /* Resolvers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Resolvers.swift; path = TPFeatureTag/Classes/Resolvers.swift; sourceTree = "<group>"; };
 		B8FB9EF3E0BA2C5D304169CAAAA9F4EB /* TPFeatureTag.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = TPFeatureTag.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BBCB07DDBA1E3B7F0AF8CC1085A34D05 /* ToSucceed.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ToSucceed.swift; path = Sources/Nimble/Matchers/ToSucceed.swift; sourceTree = "<group>"; };
 		BD076A6347BB5E2C92F6B324D8349E59 /* CwlPreconditionTesting.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CwlPreconditionTesting.h; path = Carthage/Checkouts/CwlPreconditionTesting/Sources/CwlPreconditionTesting/Mach/CwlPreconditionTesting.h; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				B7C0DEF621868DC800ED31AA /* Common.swift */,
+				B7C0DEFD2189447400ED31AA /* Resolvers.swift */,
 				B7C0DEF421868D0F00ED31AA /* FeatureTag.swift */,
 				A376DB946AD264CC2940C460F873A578 /* FeatureTagManager.swift */,
 				B7C0DEFA2188033600ED31AA /* FeatureTagTestOverride.swift */,
@@ -764,6 +767,7 @@
 				06B41BECA3EC8636F7791FB06075EED3 /* FeatureTagManager.swift in Sources */,
 				B7C0DEF521868D0F00ED31AA /* FeatureTag.swift in Sources */,
 				98C3984B80D3ED920E645D74BC025FB3 /* TPFeatureTag-dummy.m in Sources */,
+				B7C0DEFE2189447400ED31AA /* Resolvers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

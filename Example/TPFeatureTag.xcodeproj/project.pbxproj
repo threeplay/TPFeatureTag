@@ -121,8 +121,8 @@
 			children = (
 				607FACEB1AFB9204008FA782 /* FeatureTagManagerTests.swift */,
 				B7C0DEF82188023600ED31AA /* FeatureTagTestOverrideTests.swift */,
-				607FACE91AFB9204008FA782 /* Supporting Files */,
 				B737657F2185F213002FCC7E /* FeatureTagsHolderTests.swift */,
+				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
 			sourceTree = "<group>";

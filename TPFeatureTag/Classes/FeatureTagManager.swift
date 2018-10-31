@@ -1,3 +1,7 @@
+//
+//  Created by Eliran Ben-Ezra on 10/29/18.
+//
+
 open class FeatureTags {
   public init(manager: FeatureTags.Manager = FeatureTags.Manager.instance) {
     manager.register(self)
@@ -29,15 +33,15 @@ public extension FeatureTags {
 
     public func register(_ holder: Any) {
       let mirror = Mirror(reflecting: holder)
-      let featureNameSpace = String(describing: mirror.subjectType)
+      let featureNamespace = String(describing: mirror.subjectType)
       mirror.children.forEach { child in
         guard let featureName = child.label, let feature = child.value as? FeatureTag else { return }
-        let nameSpacedFeatureName = "\(featureNameSpace).\(featureName)"
-        feature.nameSpace = featureNameSpace
+        let namespacedFeatureName = "\(featureNamespace).\(featureName)"
+        feature.namespace = featureNamespace
         feature.name = featureName
         feature.resolver = self
-        guard registeredFeatures[nameSpacedFeatureName] == nil else { return }
-        registeredFeatures[nameSpacedFeatureName] = feature
+        guard registeredFeatures[namespacedFeatureName] == nil else { return }
+        registeredFeatures[namespacedFeatureName] = feature
       }
     }
 

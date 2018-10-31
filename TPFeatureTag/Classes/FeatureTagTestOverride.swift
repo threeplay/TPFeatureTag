@@ -1,7 +1,4 @@
 //
-//  FeatureTagTestOverride.swift
-//  TPFeatureTag
-//
 //  Created by Eliran Ben-Ezra on 10/29/18.
 //
 
@@ -42,10 +39,16 @@ public extension FeatureTags {
 
   static func testOverride(_ rules: FeatureTags.OverrideRule..., testBlock: () -> Void) {
     let overrides = OverrideGetter(rules: rules)
-    rules.forEach { ($0.featureTag.resolver as? FeatureTags.Manager)?.installTestOverride(getter: overrides) }
+    rules.forEach { $0.manager?.installTestOverride(getter: overrides) }
     defer {
-      rules.forEach { ($0.featureTag.resolver as? FeatureTags.Manager)?.removeTestOverride() }
+      rules.forEach { $0.manager?.removeTestOverride() }
     }
     testBlock()
+  }
+}
+
+private extension FeatureTags.OverrideRule {
+  var manager: FeatureTags.Manager? {
+    return featureTag.resolver as? FeatureTags.Manager
   }
 }
