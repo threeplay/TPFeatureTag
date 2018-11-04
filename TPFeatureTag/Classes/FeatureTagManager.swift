@@ -45,9 +45,31 @@ public extension FeatureTags {
       }
     }
 
-    public func install(name: String, priority: UInt, getter: FeatureTagGetter) {
-      let resolver = Resolver(name: name, priority: priority, getter: getter)
-      installedResolvers = (installedResolvers + [resolver]).sorted()
+    public func install(name: String, priority: UInt, resolver: FeatureTagGetter) {
+      let resolver = Resolver(name: name, priority: priority, getter: resolver)
+      installedResolvers = (installedResolvers + [resolver]).sorted().reversed()
+    }
+
+    public func set(_ feature: FeatureTag, to value: Bool, in resolverName: String? = nil) {
+      installedResolvers
+        .filter {
+          guard let resolverName = resolverName else { return true }
+          return $0.name == resolverName
+        }
+        .forEach {
+          ($0.getter as? FeatureTagSetter)?.set(feature: feature, isOn: value)
+        }
+    }
+
+    public func clear(_ feature: FeatureTag, in resolverName: String? = nil) {
+      installedResolvers
+        .filter {
+          guard let resolverName = resolverName else { return true }
+          return $0.name == resolverName
+        }
+        .forEach {
+          ($0.getter as? FeatureTagSetter)?.clear(feature: feature)
+        }
     }
 
     public func resolve(_ feature: FeatureTag) -> (source: String, isOn: Bool) {

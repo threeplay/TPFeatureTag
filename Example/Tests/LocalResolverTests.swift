@@ -14,7 +14,7 @@ class LocalResolverTests: XCTestCase {
   var resolver: (FeatureTagGetter & FeatureTagSetter)!
   override func setUp() {
     super.setUp()
-    resolver = FeatureTags.Resolvers.Local(nameSpace: "test")
+    resolver = FeatureTags.Resolvers.Local(namespace: "test")
   }
 
   func test_that_feature_tag_value_can_be_set() {

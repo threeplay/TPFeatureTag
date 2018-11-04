@@ -14,24 +14,24 @@ extension FeatureTags {
 
 extension FeatureTags.Resolvers {
   class Local: FeatureTagGetter, FeatureTagSetter {
-    let nameSpace: String
+    let namespace: String
     private let userDefaults: UserDefaults
 
-    init(nameSpace: String = "featuretag") {
-      self.nameSpace = nameSpace
+    init(namespace: String = "featuretag") {
+      self.namespace = namespace
       self.userDefaults = UserDefaults.standard
     }
 
     func isOn(feature: FeatureTag) -> Bool? {
-      return userDefaults.object(forKey: feature.localKey(prefix: nameSpace)) as? Bool
+      return userDefaults.object(forKey: feature.localKey(prefix: namespace)) as? Bool
     }
 
     func set(feature: FeatureTag, isOn: Bool) {
-      userDefaults.set(isOn, forKey: feature.localKey(prefix: nameSpace))
+      userDefaults.set(isOn, forKey: feature.localKey(prefix: namespace))
     }
 
     func clear(feature: FeatureTag) {
-      userDefaults.removeObject(forKey: feature.localKey(prefix: nameSpace))
+      userDefaults.removeObject(forKey: feature.localKey(prefix: namespace))
     }
   }
 }
